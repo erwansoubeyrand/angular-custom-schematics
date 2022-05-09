@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "custom-component": {
+      "description": "A shematic to generate a component inside a classic project.",
+      "factory": "./custom-component/index#customComponent",
+      "schema": "./custom-component/schema.json"
+    },
+    "custom-library-component": {
+      "description": "A schematic to generate a component library oriented.",
+      "factory": "./lnc-library-component/index#customLibraryComponent"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "SchematicsCustomComponent",
+  "title": "Custom Component Options Schema",
+  "type": "object",
+  "description": "Creates a new, custom component definition in the given or default project.",
+  "additionalProperties": false,
+  "properties": {
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path at which to create the custom component file, relative to the current workspace. Default is a folder with the same name as the component in the project root.",
+      "visible": false
+    },
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the component.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the component?"
+    },
+    "module": {
+      "type": "string",
+      "description": "The declaring module.",
+      "alias": "m"
+    },
+    "model": {
+      "type": "boolean",
+      "description": "Flag to indicate whether a model should be generated.",
+      "default": false,
+      "alias": "mc"
+    }
+  }
+}
